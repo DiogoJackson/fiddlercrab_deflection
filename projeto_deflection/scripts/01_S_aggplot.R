@@ -61,7 +61,6 @@ plotspec(bkg,
 
 #Save plot ----
 
-Paints
 png(file = "outputs/figures/Gelasimus-vomeris_paints.png",
     res = 300,
     units = "in",

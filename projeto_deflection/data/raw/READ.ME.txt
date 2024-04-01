@@ -1,0 +1,32 @@
+------------------ data_deflection variables --------------------
+
+>>> ID:
+Bird identity
+
+>>> first_attack_on_claw:
+Regiao em que o primeiro ataque ao modelo foi diferido. 1 = quela, 0 = carapaca.
+
+>>> attack_position:
+Posicao do ataque em relacao ao modelo. Ex: ataque de frente, ataque pelas costas, ataque pela lateral.
+
+>>> species:
+Nome da especie que atacou.
+
+>>> age:
+Idade categorica da especie que atacou.
+
+>>> treatment:
+Tratamento da cor do modelo.
+Tratamento A = quela laranja, carapaca preta.
+Tratamento B = quela preta, carapaca preta.
+Tratamento C = quela laranja, carapaca com marcas azuis.
+
+>>> place:
+Lugar categorico. Se foi no meio urbano, manguezal, parque, etc.
+
+>>> background:
+Qual background do modelo. Exemplo: pano preto, pano bege, pano com lama, pano pintado... etc.
+
+>>> Coord:
+Coordenada do local onde ocorreu o evento de interacao com o modelo.
+A coordenada eh obtida a partir de uma foto tirada do local.

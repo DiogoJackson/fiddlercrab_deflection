@@ -20,9 +20,9 @@ nat <- fixspec(nat)
 bkg <- read.csv("data/raw/refletancias/00_bkg_reflectances.csv")
 bkg <- fixspec(bkg)
 
-#Preparing data ----
+#Comparing paints ----
 
-#Paints ----
+#Orange UV paint ----
 colnames(reflet)
 
 refletancias <- reflet %>% 
@@ -46,9 +46,6 @@ nat <- nat %>%
   rename("Manus" = contains("_ponta_"))
 
 #Plot ----
-plotspec(refletancias,
-         legend = T,
-         ylim = c(0,100))
 
 plotspec(nat, 
          legend = TRUE, 
@@ -58,6 +55,78 @@ plotspec(nat,
 plotspec(bkg, 
          legend = TRUE,
          main = expression(italic("Backgrounds")))
+
+#Comparing claw colors with paints ----
+
+nat <- nat %>% 
+  rename("Propodus" = contains("_prop_")) %>% 
+  rename("Carapace" = contains("_cara_")) %>% 
+  rename("Spot" = contains("_caraspot_")) %>% 
+  rename("Dactylus" = contains("_dact_")) %>% 
+  rename("Manus" = contains("_ponta_"))
+
+#2.1. Colors comparation (natural vs paint) ----
+
+#To Do list:
+# 1 = adicionar procspec na pasta "nat"
+# 2 = importar spectros
+# 3 = ajustar nome do rename: Manus_paint
+# 4 = ajustar geom_line: ex: Manus2 para Manus_paint.
+
+#Manus ----
+
+vis_manus <- vis.peafowl(nat, background = "Manus1", illum = "D65")
+vis_manus
+
+p1 <- ggplot(nat, aes(wl))+
+  geom_line(aes(y = Manus1, linetype = "Natural"), color = "#ffcf00", linewidth = 0.7)+
+  geom_line(aes(y = Manus2, linetype = "Paint"), color = "black", linewidth = 0.7)+
+  ylim(0, 100)+
+  labs(title = expression(bold("Manus")),
+       x = "Wavelength (nm)",
+       y = "Reflectance (%)")+
+  theme_test(base_size = 8)+
+  scale_linetype_manual(values = c("Paint" = "dashed", "Natural" = "solid")) +
+  theme(legend.key.height= unit(0.3, 'cm'),
+        legend.key.width= unit(1, 'cm'),
+        legend.position = c(0.70, 0.8),
+        plot.title = element_text(size = 8))+
+  guides(linetype = guide_legend(title = NULL))
+p1
+
+#Dactylus ----
+p2 <- ggplot(nat, aes(wl))+
+  geom_line(aes(y = Dactylus1, linetype = "Natural"), color = "pink", linewidth = 0.7)+
+  geom_line(aes(y = Dactylus2, linetype = "Paint"), color = "black", linewidth = 0.7)+
+  ylim(0, 100)+
+  labs(title = expression(bold("Dactylus")),
+       x = "Wavelength (nm)",
+       y = "Reflectance (%)")+
+  theme_test(base_size = 8)+
+  scale_linetype_manual(values = c("Paint" = "dashed", "Natural" = "solid")) +
+  theme(legend.key.height= unit(0.3, 'cm'),
+        legend.key.width= unit(1, 'cm'),
+        legend.position = c(0.70, 0.8),
+        plot.title = element_text(size = 8))+
+  guides(linetype = guide_legend(title = NULL))
+p2
+
+#Carapace ----
+p3 <- ggplot(nat, aes(wl))+
+  geom_line(aes(y = Carapace2, linetype = "Natural"), color = "grey", linewidth = 0.7)+
+  geom_line(aes(y = Carapace1, linetype = "Paint"), color = "black", linewidth = 0.7)+
+  ylim(0, 100)+
+  labs(title = expression(bold("Carapace")),
+       x = "Wavelength (nm)",
+       y = "Reflectance (%)")+
+  theme_test(base_size = 8)+
+  scale_linetype_manual(values = c("Paint" = "dashed", "Natural" = "solid")) +
+  theme(legend.key.height= unit(0.3, 'cm'),
+        legend.key.width= unit(1, 'cm'),
+        legend.position = c(0.70, 0.8),
+        plot.title = element_text(size = 8))+
+  guides(linetype = guide_legend(title = NULL))
+p3
 
 #Save plot ----
 

@@ -6,12 +6,15 @@
 # Tue Apr 16 17:13:24 2024 ------------------------------
 
 #package ----
+library(readxl)
 library(tidyverse)
 
 #Import data ----
-head(dat)
+dat <- read_excel("data/raw/data_deflection.xlsx")
 
 #Visualizing data  ----
+dat <- dat %>% 
+  filter(treatment == "A")
 
 p <- ggplot(dat, aes(x = first_attack)) +
   geom_bar(width = 0.6, fill = "#40e0d0") +  # Defina a cor de preenchimento aqui

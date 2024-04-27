@@ -17,14 +17,14 @@ dat2 <- dat %>%
   filter(treatment == "A")
 
 p <- ggplot(dat2, aes(x = first_attack)) +
-  geom_bar(width = 0.6, fill = "#40e0d0") +  # Defina a cor de preenchimento aqui
+  geom_bar(width = 0.6, fill = "grey") +  # Defina a cor de preenchimento aqui
   stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +  # Adicione rótulos às barras
   labs(x = "First attack", y = "Total of attacks") +
   theme_classic()
 p
 
 p2 <- ggplot(filter(dat2, experiment == "definitive"), aes(x = first_attack)) +
-  geom_bar(width = 0.6, fill = "#40e0d0") +  # Defina a cor de preenchimento aqui
+  geom_bar(width = 0.6, fill = "grey") +  # Defina a cor de preenchimento aqui
   stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +  # Adicione rótulos às barras
   labs(x = "First attack", y = "Total of attacks") +
   theme_classic()
@@ -39,7 +39,7 @@ p3 <- ggplot(dat, aes(x = first_attack, fill = attack_position)) +
   facet_grid(~treatment)
 p3
 
-p4 <- ggplot(dat, aes(x = first_attack)) +
+p4 <- ggplot(filter(dat, experiment == "definitive"), aes(x = first_attack)) +
   geom_bar(width = 0.6, fill = "grey") +  # Defina a cor de preenchimento aqui
   stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +  # Adicione rótulos às barras
   labs(x = "First attack", y = "Total of attacks") +

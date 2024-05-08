@@ -39,6 +39,9 @@ p3 <- ggplot(dat, aes(x = first_attack, fill = attack_position)) +
   facet_grid(~treatment)
 p3
 
+dat_definitive <- dat %>% 
+  filter(experiment == "definitive")
+
 p4 <- ggplot(dat, aes(x = first_attack)) +
   geom_bar(width = 0.6, fill = "grey") +  # Defina a cor de preenchimento aqui
   stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +  # Adicione rótulos às barras

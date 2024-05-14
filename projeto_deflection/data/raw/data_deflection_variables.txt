@@ -3,7 +3,7 @@
 >>> ID:
 Bird identity
 
->>> first_attack_on_claw:
+>>> first_attack:
 Region where the first attack on the robocrab was deferred. 1 = claw, 0 = carapace.
 
 >>> attack_position:
@@ -26,7 +26,10 @@ Treatment D = orange claw, black carapace, but without claws moviment.
 Location of the experiment.
 
 >>> background:
-Robocrab's background. Example: black cloth, beige cloth, mud-stained cloth, painted cloth... etc.
+Robocrab's background. Example: beige cloth, mud-stained cloth...
+
+>>> illuminant:
+If the robocrab position was under direct sunlight or shade.
 
 >>> Coord:
 Coordinate of the location where the interaction event with the robocrab occurred.
@@ -34,7 +37,7 @@ The coordinate is obtained from a photo with location taken from the site.
 
 >>> experiment:
 Tells us if it's a pilot or definitive experiment.
-This variable is used to filter out definitive experiments if necessary.
+This variable is used to filter using R.
 
 >>> video:
 This variable tells us if the event was recorded.

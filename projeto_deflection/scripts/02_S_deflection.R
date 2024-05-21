@@ -43,9 +43,18 @@ dat_definitive <- dat %>%
   filter(experiment == "definitive")
 
 p4 <- ggplot(dat, aes(x = first_attack)) +
-  geom_bar(width = 0.6, fill = "grey") +  # Defina a cor de preenchimento aqui
+  geom_bar(width = 0.6, fill = "darkgrey") +  # Defina a cor de preenchimento aqui
   stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +  # Adicione rótulos às barras
+  scale_fill_manual(values = c("grey10", "orange"))+
   labs(x = "First attack", y = "Total of attacks") +
-  theme_classic()+
+  theme_classic(base_size = 16)+
   facet_grid(~treatment)
 p4
+
+ggsave(plot = p4, 
+       filename = "outputs/figures/Figure2.png",
+       width = 8, 
+       height = 5, 
+       dpi = 300)
+
+  

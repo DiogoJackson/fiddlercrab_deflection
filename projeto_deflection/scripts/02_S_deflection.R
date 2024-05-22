@@ -3,7 +3,7 @@
 # Tue Apr 16 17:13:11 2024 ------------------------------
 
 #last update
-# Tue Apr 16 17:13:24 2024 ------------------------------
+# Wed May 22 22:01:54 2024 ------------------------------
 
 #package ----
 library(readxl)
@@ -43,10 +43,11 @@ dat_definitive <- dat %>%
   filter(experiment == "definitive")
 
 p4 <- ggplot(dat, aes(x = first_attack)) +
-  geom_bar(width = 0.6, fill = "darkgrey") +  # Defina a cor de preenchimento aqui
-  stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +  # Adicione rótulos às barras
+  geom_bar(width = 0.5, fill = "darkgrey") +  
+  stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +
   scale_fill_manual(values = c("grey10", "orange"))+
   labs(x = "First attack", y = "Total of attacks") +
+  ylim(0,25)+
   theme_classic(base_size = 16)+
   facet_grid(~treatment)
 p4

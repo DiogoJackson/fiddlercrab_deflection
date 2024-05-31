@@ -28,7 +28,7 @@ p1
 dat_definitive <- dat %>% 
   filter(experiment == "definitive")
 
-p2 <- ggplot(dat, aes(x = first_attack)) +
+p2 <- ggplot(dat_definitive, aes(x = first_attack)) +
   geom_bar(width = 0.5, fill = "darkgrey") +  
   stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +
   scale_fill_manual(values = c("grey10", "orange"))+

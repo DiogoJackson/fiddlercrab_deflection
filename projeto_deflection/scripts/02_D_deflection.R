@@ -2,9 +2,8 @@
 #'Author: Diogo Silva
 # Wed May 22 22:01:39 2024 ------------------------------
 
-
 #last update
-# Wed May 22 22:01:44 2024 ------------------------------
+# Mon May 27 11:07:49 2024 ------------------------------
 
 #package ----
 library(readxl)
@@ -17,6 +16,18 @@ head(data)
 glimpse(data)
 
 #Fitting models ----
-m1 <- glmer(outcome ~ treatment + trial + (1 | place) + (1 | ID), 
+m1 <- glmer(outcome ~ treatment * attack_position + (1 | place), 
                     data = data, family = binomial)
 summary(m1)
+
+m2 <- glmer(outcome ~ treatment + attack_position + (1 | place), 
+            data = data, family = binomial)
+summary(m2)
+
+m3 <- glmer(outcome ~ treatment * attack_position + (1 | trial) + (1 | place), 
+            data = data, family = binomial)
+summary(m3)
+
+m4 <- glmer(outcome ~ treatment + attack_position + (1 | trial) + (1 | place), 
+            data = data, family = binomial)
+summary(m4)

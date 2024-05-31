@@ -16,43 +16,36 @@ dat <- read_excel("data/raw/data_deflection.xlsx")
 dat2 <- dat %>% 
   filter(treatment == "A")
 
-p <- ggplot(dat2, aes(x = first_attack)) +
-  geom_bar(width = 0.6, fill = "grey") +  # Defina a cor de preenchimento aqui
-  stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +  # Adicione rótulos às barras
-  labs(x = "First attack", y = "Total of attacks") +
-  theme_classic()
-p
-
-p2 <- ggplot(filter(dat2, experiment == "definitive"), aes(x = first_attack)) +
-  geom_bar(width = 0.6, fill = "grey") +  # Defina a cor de preenchimento aqui
-  stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +  # Adicione rótulos às barras
-  labs(x = "First attack", y = "Total of attacks") +
-  theme_classic()
-p2
-
-p3 <- ggplot(dat, aes(x = first_attack, fill = attack_position)) +
+p1 <- ggplot(dat, aes(x = first_attack, fill = attack_position)) +
   geom_bar(width = 0.6, position = position_dodge(preserve = "single" )) +  # Defina a cor de preenchimento aqui
   geom_text(stat = "count", aes(label = ..count..), position = position_dodge(width = 0.6), vjust = -0.5, size = 3) +  
   scale_fill_manual(values = c("grey", "grey33", "grey10"))+
   labs(x = "First attack", y = "Total of attacks") +
   theme_classic()+
   facet_grid(~treatment)
-p3
+p1
 
 dat_definitive <- dat %>% 
   filter(experiment == "definitive")
 
-p4 <- ggplot(dat, aes(x = first_attack)) +
+p2 <- ggplot(dat, aes(x = first_attack)) +
   geom_bar(width = 0.5, fill = "darkgrey") +  
   stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +
   scale_fill_manual(values = c("grey10", "orange"))+
   labs(x = "First attack", y = "Total of attacks") +
-  ylim(0,25)+
+  ylim(0,30)+
   theme_classic(base_size = 16)+
   facet_grid(~treatment)
-p4
+p2
 
-ggsave(plot = p4, 
+
+ggsave(plot = p1, 
+       filename = "outputs/figures/Figure_atk_position.png",
+       width = 8, 
+       height = 5, 
+       dpi = 300)
+
+ggsave(plot = p2, 
        filename = "outputs/figures/Figure2.png",
        width = 8, 
        height = 5, 

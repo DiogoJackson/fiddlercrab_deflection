@@ -1,58 +1,85 @@
-"ID","trial","first_attack","outcome","attack_position","species","age","treatment","place","illuminant","background","coord","experiment","video","date"
-"1","1","Carapace",0,"back","bush_turkey","adult","A","UQ","shade","beige_cloth","-27.498074,153.014499","pilot","yes",2024-04-01
-"2","1","Claw",1,"front","bush_turkey","adult","A","UQ","shade","beige_cloth","-27.498074,153.014499","pilot","yes",2024-04-01
-"3","1","Claw",1,"back","bush_turkey","adult","A","UQ","shade","beige_cloth","-27.497869,153.011608","pilot","no",2024-04-01
-"4","1","Claw",1,"front","bush_turkey","adult","A","UQ","shade","beige_cloth","-27.493470,153.006098","pilot","no",2024-04-01
-"5","2","Claw",1,"lateral","ibis","adult","A","brisbane_city_botanic_gardens","shade","mud_cloth","-27.474314,153.029142","definitive","yes",2024-04-02
-"6","3","Carapace",0,"back","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.475685,152.979682","definitive","no",2024-04-08
-"7","4","Claw",1,"back","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.475685,152.979682","definitive","no",2024-04-08
-"8","5","Claw",1,"lateral","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.475685,152.979682","definitive","no",2024-04-08
-"9","5","Carapace",0,"front","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.475597,152.978732","definitive","no",2024-04-08
-"10","5","Claw",1,"front","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.475384,152.978318","definitive","no",2024-04-08
-"11","6","Claw",1,"lateral","bush_turkey","adult","A","south_banks","shade","mud_cloth","-27.471061095217745, 153.0127999012344","definitive","no",2024-04-15
-"12","7","Claw",1,"front","bush_turkey","adult","A","south_banks","shade","mud_cloth","-27.475797,153.021809","definitive","no",2024-04-15
-"13","8","Carapace",0,"back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465852,153.034098","definitive","yes",2024-04-15
-"14","8","Carapace",0,"back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465852,153.034098","definitive","yes",2024-04-15
-"15","9","Claw",1,"lateral","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465621,153.034201","definitive",NA,2024-04-16
-"16","9","Carapace",0,"back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465621,153.034201","definitive",NA,2024-04-16
-"17","10","Claw",1,"back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.464701,153.035694","definitive",NA,2024-04-16
-"18","11","Carapace",0,"back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.464701,153.035694","definitive",NA,2024-04-16
-"19","12","Carapace",0,"back","bush_turkey","adult","A","captain_burke_park","direct_sunlight","mud_cloth","-27.464841,153.035266","definitive",NA,2024-04-16
-"20","12","Claw",1,"lateral","bush_turkey","adult","A","captain_burke_park","direct_sunlight","mud_cloth","-27.464841,153.035266","definitive",NA,2024-04-16
-"21","12","Claw",1,"front","bush_turkey","adult","A","captain_burke_park","direct_sunlight","mud_cloth","-27.464841,153.035266","definitive",NA,2024-04-16
-"22","13","Claw",1,"lateral","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465852,153.034098","definitive",NA,2024-04-16
-"23","14","Carapace",0,"lateral","bush_turkey","adult","A","simpsons_playground_reserve","shade","mud_cloth","-27.523223,152.992964","definitive",NA,2024-04-18
-"24","15","Carapace",0,"back","bush_turkey","adult","A","simpsons_playground_reserve","direct_sunlight","mud_cloth","-27.523649,152.993419","definitive",NA,2024-04-18
-"25","15","Carapace",0,"back","bush_turkey","adult","A","simpsons_playground_reserve","direct_sunlight","mud_cloth","-27.523649,152.993419","definitive",NA,2024-04-18
-"26","15","Claw",1,"front","bush_turkey","adult","A","simpsons_playground_reserve","direct_sunlight","mud_cloth","-27.523649,152.993419","definitive",NA,2024-04-18
-"27","16","Claw",1,"back","bush_turkey","adult","A","simpsons_playground_reserve","shade","mud_cloth","-27.523746,152.993267","definitive",NA,2024-04-18
-"28","16","Claw",1,"front","bush_turkey","adult","A","simpsons_playground_reserve","shade","mud_cloth","-27.523746,152.993267","definitive",NA,2024-04-18
-"29","17","Carapace",0,"back","bush_turkey","adult","B","simpsons_playground_reserve","shade","mud_cloth","-27.523223,152.992964","definitive",NA,2024-04-18
-"30","18","Carapace",0,"front","bush_turkey","adult","B","oxley_creek_common","shade","mud_cloth","-27.535778, 152.992306","definitive",NA,2024-04-19
-"31","19","Carapace",0,"lateral","bush_turkey","adult","B","oxley_creek_common","shade","mud_cloth","-27.535667, 152.992194","definitive",NA,2024-04-19
-"32","20","Carapace",0,"back","bush_turkey","adult","B","Munro_St","direct_sunlight","mud_cloth","-27.492764,153.005894","definitive",NA,2024-04-22
-"33","21","Carapace",0,"lateral","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","direct_sunlight","mud_cloth","-27.477252,152.973800","definitive",NA,2024-04-22
-"34","22","Carapace",0,"back","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","direct_sunlight","mud_cloth","-27.478078,152.974768","definitive",NA,2024-04-22
-"35","23","Carapace",0,"back","ibis","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477342,152.976680","definitive",NA,2024-04-22
-"36","24","Carapace",0,"front","bush_turkey","adult","B","seventh_brigade_park","shade","mud_cloth","-27.381263,153.035628","definitive",NA,2024-05-02
-"37","25","Carapace",0,"lateral","bush_turkey","adult","B","seventh_brigade_park","shade","mud_cloth","-27.380979,153.036048","definitive",NA,2024-05-02
-"38","25","Carapace",0,"front","bush_turkey","adult","B","seventh_brigade_park","shade","mud_cloth","-27.380979,153.036048","definitive",NA,2024-05-02
-"39","26","Carapace",0,"back","bush_turkey","adult","B","lambertia_close_park","shade","mud_cloth","-27.519469,153.093534","definitive",NA,2024-05-06
-"40","26","Carapace",0,"back","bush_turkey","adult","B","lambertia_close_park","shade","mud_cloth","-27.519469,153.093534","definitive",NA,2024-05-06
-"41","27","Carapace",0,"front","bush_turkey","adult","B","russ_hall_park","shade","mud_cloth","-27.549609,153.033562","definitive",NA,2024-05-08
-"42","28","Carapace",0,"lateral","bush_turkey","adult","B","banks_street_reserve","shade","mud_cloth","-27.437050,152.998649","definitive",NA,2024-05-14
-"43","29","Carapace",0,"back","bush_turkey","adult","B","UQ","shade","mud_cloth","-27.496427,153.011575","definitive",NA,2024-05-21
-"44","30","Carapace",0,"lateral","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
-"45","30","Carapace",0,"back","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
-"46","30","Carapace",0,"back","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
-"47","30","Carapace",0,"back","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
-"48","30","Carapace",0,"lateral","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
-"49","30","Carapace",0,"back","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
-"50","30","Carapace",0,"back","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
-"51","31","Carapace",0,"lateral","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477662,152.979190","definitive","yes",2024-05-26
-"52","32","Carapace",0,"back","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477292,152.979743","definitive","yes",2024-05-26
-"53","32","Claw",1,"lateral","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477292,152.979743","definitive","yes",2024-05-26
-"54","33","Carapace",0,"back","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477258,152.980125","definitive","yes",2024-05-26
-"55","33","Carapace",0,"lateral","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477258,152.980125","definitive","yes",2024-05-26
-"56","33","Carapace",0,"lateral","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477258,152.980125","definitive","yes",2024-05-26
-"57","33","Carapace",0,"front","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477258,152.980125","definitive","yes",2024-05-26
+"ID","trial","first_attack","outcome","attack_position","attack_position2","species","age","treatment","place","illuminant","background","coord","experiment","video","date"
+"1","1","Carapace",0,"back","back","bush_turkey","adult","A","UQ","shade","beige_cloth","-27.498074,153.014499","pilot","yes",2024-04-01
+"2","1","Claw",1,"front","front","bush_turkey","adult","A","UQ","shade","beige_cloth","-27.498074,153.014499","pilot","yes",2024-04-01
+"3","1","Claw",1,"back","back","bush_turkey","adult","A","UQ","shade","beige_cloth","-27.497869,153.011608","pilot","no",2024-04-01
+"4","1","Claw",1,"front","front","bush_turkey","adult","A","UQ","shade","beige_cloth","-27.493470,153.006098","pilot","no",2024-04-01
+"5","2","Claw",1,"lateral","lateral","ibis","adult","A","brisbane_city_botanic_gardens","shade","mud_cloth","-27.474314,153.029142","definitive","yes",2024-04-02
+"6","3","Carapace",0,"back","back","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.475685,152.979682","definitive","no",2024-04-08
+"7","4","Claw",1,"back","back","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.475685,152.979682","definitive","no",2024-04-08
+"8","5","Claw",1,"lateral","lateral","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.475685,152.979682","definitive","no",2024-04-08
+"9","5","Carapace",0,"front","front","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.475597,152.978732","definitive","no",2024-04-08
+"10","5","Claw",1,"front","front","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.475384,152.978318","definitive","no",2024-04-08
+"11","6","Claw",1,"lateral","lateral","bush_turkey","adult","A","south_banks","shade","mud_cloth","-27.471061095217745, 153.0127999012344","definitive","no",2024-04-15
+"12","7","Claw",1,"front","front","bush_turkey","adult","A","south_banks","shade","mud_cloth","-27.475797,153.021809","definitive","no",2024-04-15
+"13","8","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465852,153.034098","definitive","yes",2024-04-15
+"14","8","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465852,153.034098","definitive","yes",2024-04-15
+"15","9","Claw",1,"lateral","lateral","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465621,153.034201","definitive",NA,2024-04-16
+"16","9","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465621,153.034201","definitive",NA,2024-04-16
+"17","10","Claw",1,"back","back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.464701,153.035694","definitive",NA,2024-04-16
+"18","11","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.464701,153.035694","definitive",NA,2024-04-16
+"19","12","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park","direct_sunlight","mud_cloth","-27.464841,153.035266","definitive",NA,2024-04-16
+"20","12","Claw",1,"lateral","lateral","bush_turkey","adult","A","captain_burke_park","direct_sunlight","mud_cloth","-27.464841,153.035266","definitive",NA,2024-04-16
+"21","12","Claw",1,"front","front","bush_turkey","adult","A","captain_burke_park","direct_sunlight","mud_cloth","-27.464841,153.035266","definitive",NA,2024-04-16
+"22","13","Claw",1,"lateral","lateral","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465852,153.034098","definitive",NA,2024-04-16
+"23","14","Carapace",0,"lateral","lateral","bush_turkey","adult","A","simpsons_playground_reserve","shade","mud_cloth","-27.523223,152.992964","definitive",NA,2024-04-18
+"24","15","Carapace",0,"back","back","bush_turkey","adult","A","simpsons_playground_reserve","direct_sunlight","mud_cloth","-27.523649,152.993419","definitive",NA,2024-04-18
+"25","15","Carapace",0,"back","back","bush_turkey","adult","A","simpsons_playground_reserve","direct_sunlight","mud_cloth","-27.523649,152.993419","definitive",NA,2024-04-18
+"26","15","Claw",1,"front","front","bush_turkey","adult","A","simpsons_playground_reserve","direct_sunlight","mud_cloth","-27.523649,152.993419","definitive",NA,2024-04-18
+"27","16","Claw",1,"back","back","bush_turkey","adult","A","simpsons_playground_reserve","shade","mud_cloth","-27.523746,152.993267","definitive",NA,2024-04-18
+"28","16","Claw",1,"front","front","bush_turkey","adult","A","simpsons_playground_reserve","shade","mud_cloth","-27.523746,152.993267","definitive",NA,2024-04-18
+"29","17","Carapace",0,"back","back","bush_turkey","adult","B","simpsons_playground_reserve","shade","mud_cloth","-27.523223,152.992964","definitive",NA,2024-04-18
+"30","18","Carapace",0,"front","front","bush_turkey","adult","B","oxley_creek_common","shade","mud_cloth","-27.535778, 152.992306","definitive",NA,2024-04-19
+"31","19","Carapace",0,"lateral","lateral","bush_turkey","adult","B","oxley_creek_common","shade","mud_cloth","-27.535667, 152.992194","definitive",NA,2024-04-19
+"32","20","Carapace",0,"back","back","bush_turkey","adult","B","Munro_St","direct_sunlight","mud_cloth","-27.492764,153.005894","definitive",NA,2024-04-22
+"33","21","Carapace",0,"lateral","lateral","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","direct_sunlight","mud_cloth","-27.477252,152.973800","definitive",NA,2024-04-22
+"34","22","Carapace",0,"back","back","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","direct_sunlight","mud_cloth","-27.478078,152.974768","definitive",NA,2024-04-22
+"35","23","Carapace",0,"back","back","ibis","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477342,152.976680","definitive",NA,2024-04-22
+"36","24","Carapace",0,"front","front","bush_turkey","adult","B","seventh_brigade_park","shade","mud_cloth","-27.381263,153.035628","definitive",NA,2024-05-02
+"37","25","Carapace",0,"lateral","lateral","bush_turkey","adult","B","seventh_brigade_park","shade","mud_cloth","-27.380979,153.036048","definitive",NA,2024-05-02
+"38","25","Carapace",0,"front","front","bush_turkey","adult","B","seventh_brigade_park","shade","mud_cloth","-27.380979,153.036048","definitive",NA,2024-05-02
+"39","26","Carapace",0,"back","back","bush_turkey","adult","B","lambertia_close_park","shade","mud_cloth","-27.519469,153.093534","definitive",NA,2024-05-06
+"40","26","Carapace",0,"back","back","bush_turkey","adult","B","lambertia_close_park","shade","mud_cloth","-27.519469,153.093534","definitive",NA,2024-05-06
+"41","27","Carapace",0,"front","front","bush_turkey","adult","B","russ_hall_park","shade","mud_cloth","-27.549609,153.033562","definitive",NA,2024-05-08
+"42","28","Carapace",0,"lateral","lateral","bush_turkey","adult","B","banks_street_reserve","shade","mud_cloth","-27.437050,152.998649","definitive",NA,2024-05-14
+"43","29","Carapace",0,"back","back","bush_turkey","adult","B","UQ","shade","mud_cloth","-27.496427,153.011575","definitive",NA,2024-05-21
+"44","30","Carapace",0,"lateral","lateral","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
+"45","30","Carapace",0,"back","back","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
+"46","30","Carapace",0,"back","back","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
+"47","30","Carapace",0,"back","back","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
+"48","30","Carapace",0,"lateral","lateral","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
+"49","30","Carapace",0,"back","back","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
+"50","30","Carapace",0,"back","back","bush_turkey","adult","B","captain_burke_park","shade","mud_cloth","-27.464749,153.035661","definitive",NA,2024-05-22
+"51","31","Carapace",0,"lateral","lateral","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477662,152.979190","definitive","yes",2024-05-26
+"52","32","Carapace",0,"back","back","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477292,152.979743","definitive","yes",2024-05-26
+"53","32","Claw",1,"lateral","lateral","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477292,152.979743","definitive","yes",2024-05-26
+"54","33","Carapace",0,"back","back","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477258,152.980125","definitive","yes",2024-05-26
+"55","33","Carapace",0,"lateral","lateral","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477258,152.980125","definitive","yes",2024-05-26
+"56","33","Carapace",0,"lateral","lateral","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477258,152.980125","definitive","yes",2024-05-26
+"57","33","Carapace",0,"front","front","bush_turkey","adult","B","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477258,152.980125","definitive","yes",2024-05-26
+"58","34","Claw",1,"back","back","bush_turkey","adult","C","captain_burke_park","shade","mud_cloth","-27.464930, 153.034856","definitive",NA,2024-05-31
+"59","34","Carapace",0,"lateral","left","bush_turkey","adult","C","captain_burke_park","shade","mud_cloth","-27.464930, 153.034856","definitive",NA,2024-05-31
+"60","34","Claw",1,"back","back","bush_turkey","adult","C","captain_burke_park","shade","mud_cloth","-27.464930, 153.034856","definitive",NA,2024-05-31
+"61","34","Claw",1,"lateral","left","bush_turkey","adult","C","captain_burke_park","shade","mud_cloth","-27.464930, 153.034856","definitive",NA,2024-05-31
+"62","34","Carapace",0,"lateral","left","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.464930, 153.034856","definitive",NA,2024-05-31
+"63","34","Claw",1,"lateral","left","bush_turkey","adult","C","captain_burke_park","shade","mud_cloth","-27.464930, 153.034856","definitive",NA,2024-05-31
+"64","34","Carapace",0,"lateral","left","bush_turkey","adult","C","captain_burke_park","shade","mud_cloth","-27.464930, 153.034856","definitive",NA,2024-05-31
+"65","34","Claw",1,"front","front","bush_turkey","adult","C","captain_burke_park","shade","mud_cloth","-27.464930, 153.034856","definitive",NA,2024-05-31
+"66","34","Claw",1,"lateral","right","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.464930, 153.034856","definitive",NA,2024-05-31
+"67","34","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.464930, 153.034856","definitive",NA,2024-05-31
+"68","35","Carapace",0,"back","back","bush_turkey","adult","C","captain_burke_park_south","shade","mud_cloth","-27.465852,153.034098","definitive",NA,2024-05-31
+"69","35","Carapace",0,"lateral","left","bush_turkey","adult","C","captain_burke_park_south","shade","mud_cloth","-27.465852,153.034098","definitive",NA,2024-05-31
+"70","35","Claw",1,"back","back","bush_turkey","adult","C","captain_burke_park_south","shade","mud_cloth","-27.465852,153.034098","definitive",NA,2024-05-31
+"71","36","Claw",1,"back","back","bush_turkey","adult","C","captain_burke_park_south","shade","mud_cloth","-27.465147,153.034666","definitive",NA,2024-05-31
+"72","36","Carapace",0,"lateral","right","bush_turkey","adult","A","captain_burke_park_south","shade","mud_cloth","-27.465147,153.034666","definitive",NA,2024-05-31
+"73","36","Carapace",0,"front","front","bush_turkey","adult","A","captain_burke_park_south","shade","mud_cloth","-27.465147,153.034666","definitive",NA,2024-05-31
+"74","36","Claw",1,"lateral","left","bush_turkey","adult","C","captain_burke_park_south","shade","mud_cloth","-27.465147,153.034666","definitive",NA,2024-05-31
+"75","36","Claw",1,"back","back","bush_turkey","adult","C","captain_burke_park_south","shade","mud_cloth","-27.465147,153.034666","definitive",NA,2024-05-31
+"76","36","Claw",1,"back","back","bush_turkey","adult","C","captain_burke_park_south","shade","mud_cloth","-27.465147,153.034666","definitive",NA,2024-05-31
+"77","37","Claw",1,"front","front","bush_turkey","adult","C","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.476785,152.978979","definitive",NA,2024-06-02
+"78","37","Carapace",0,"lateral","right","bush_turkey","adult","C","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.476785,152.978979","definitive",NA,2024-06-02
+"79","38","Claw",1,"front","front","bush_turkey","adult","C","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477484,152.978106","definitive",NA,2024-06-02
+"80","38","Carapace",0,"back","back","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477484,152.978106","definitive",NA,2024-06-02
+"81","39","Claw",1,"front","front","bush_turkey","adult","C","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.476308,152.974785","definitive",NA,2024-06-02
+"82","39","Carapace",0,"lateral","left","bush_turkey","adult","C","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.476308,152.974785","definitive",NA,2024-06-02
+"83","40","Claw",1,"lateral","left","bush_turkey","adult","C","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.477484,152.978106","definitive",NA,2024-06-02
+"84","41","Claw",1,"back","back","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.476971,152.980223","definitive",NA,2024-06-02

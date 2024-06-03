@@ -14,12 +14,12 @@ dat <- read_excel("data/raw/data_deflection.xlsx")
 
 #add cor
 # Modificar o dataframe para incluir uma coluna de cor baseada no tratamento e first_attack
-dat$color <- with(dat, ifelse(treatment == "A" & first_attack == "Carapace", "#454e57",
-                              ifelse(treatment == "A" & first_attack == "Claw", "#ffb444",
-                                     ifelse(treatment == "B" & first_attack == "Carapace", "#454e57",
-                                            ifelse(treatment == "B" & first_attack == "Claw", "#454e57",
-                                                   ifelse(treatment == "C" & first_attack == "Carapace", "lightblue",
-                                                          ifelse(treatment == "C" & first_attack == "Claw", "#ffb444", NA)))))))
+dat$color <- with(dat, ifelse(treatment == "A" & first_attack == "Carapace", "#2f4858",
+                              ifelse(treatment == "A" & first_attack == "Claw", "#f6ae2d",
+                                     ifelse(treatment == "B" & first_attack == "Carapace", "#2f4858",
+                                            ifelse(treatment == "B" & first_attack == "Claw", "#2f4858",
+                                                   ifelse(treatment == "C" & first_attack == "Carapace", "#56dde0",
+                                                          ifelse(treatment == "C" & first_attack == "Claw", "#f6ae2d", NA)))))))
 
 #Visualizing data  ----
 p1 <- ggplot(dat, aes(x = first_attack, fill = attack_position)) +

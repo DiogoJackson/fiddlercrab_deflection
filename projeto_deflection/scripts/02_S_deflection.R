@@ -12,10 +12,16 @@ library(tidyverse)
 #Import data ----
 dat <- read_excel("data/raw/data_deflection.xlsx")
 
-#Visualizing data  ----
-dat2 <- dat %>% 
-  filter(treatment == "A")
+#add cor
+# Modificar o dataframe para incluir uma coluna de cor baseada no tratamento e first_attack
+dat$color <- with(dat, ifelse(treatment == "A" & first_attack == "Carapace", "#454e57",
+                              ifelse(treatment == "A" & first_attack == "Claw", "#ffb444",
+                                     ifelse(treatment == "B" & first_attack == "Carapace", "#454e57",
+                                            ifelse(treatment == "B" & first_attack == "Claw", "#454e57",
+                                                   ifelse(treatment == "C" & first_attack == "Carapace", "lightblue",
+                                                          ifelse(treatment == "C" & first_attack == "Claw", "#ffb444", NA)))))))
 
+#Visualizing data  ----
 p1 <- ggplot(dat, aes(x = first_attack, fill = attack_position)) +
   geom_bar(width = 0.6, position = position_dodge(preserve = "single" )) +  # Defina a cor de preenchimento aqui
   geom_text(stat = "count", aes(label = ..count..), position = position_dodge(width = 0.6), vjust = -0.5, size = 3) +  
@@ -28,15 +34,18 @@ p1
 dat_definitive <- dat %>% 
   filter(experiment == "definitive")
 
-p2 <- ggplot(dat, aes(x = first_attack)) +
-  geom_bar(width = 0.5, fill = "darkgrey") +  
+# Criar o gráfico com as cores especificadas
+p2 <- ggplot(dat, aes(x = first_attack, fill = color)) +
+  geom_bar(width = 0.5) +
   stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +
-  scale_fill_manual(values = c("grey10", "orange"))+
+  scale_fill_identity() + # Usa a coluna de cores diretamente
+  scale_x_discrete(limits = c("Claw", "Carapace")) + # Define a ordem das barras
   labs(x = "First attack", y = "Total of attacks") +
-  ylim(0,30)+
-  theme_classic(base_size = 16)+
+  ylim(0, 30) +
+  theme_classic(base_size = 16) +
   facet_grid(~treatment)
 p2
+
 
 
 ggsave(plot = p1, 

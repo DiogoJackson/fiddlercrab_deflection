@@ -17,29 +17,26 @@ nat <- fixspec(nat)
 
 #Comparing claw colors with paints ----
 
-nat <- nat %>% 
-  rename("Propodus" = contains("_prop_")) %>% 
-  rename("Carapace" = contains("_cara_")) %>% 
-  rename("Spot" = contains("_caraspot_")) %>% 
-  rename("Dactylus" = contains("_dact_")) %>% 
-  rename("Manus" = contains("_ponta_")) %>% 
-  rename("Mudflat" = contains("_areia")) %>% 
-  rename("Robot_manus" = contains("laranja")) %>% 
-  rename("Robot_dactyl" = contains("rosa")) %>% 
-  rename("Cloth" = contains("pano")) %>% 
-  rename("Robot_carapace" = contains("preto"))
-nat
+nat2 <- nat %>%
+  rename("Carapace" = contains("black_carapace")) %>% 
+  rename("Blue_spot" = contains("blue_carapace")) %>% 
+  rename("Dactylus" = contains("pink_dactylus")) %>% 
+  rename("Manus" = contains("orange_manus")) %>% 
+  rename("Mudflat" = contains("mudflat")) %>% 
+  rename("Robot_manus" = contains("orange_paint")) %>% 
+  rename("Robot_dactyl" = contains("pink_paint")) %>% 
+  rename("Cloth" = contains("cloth")) %>% 
+  rename("Black_carapace" = contains("black_paint")) %>% 
+  rename("Blue_carapace" = contains("blue_paint"))
+nat2
 
-#2.1. Colors comparation (natural vs paint) ----
+#2.1. Colors comparation (Natural vs paint) ----
 
-vis_manus <- vis.peafowl(nat, background = "Manus2", illum = "D65")
-vis_manus
-
-p1 <- ggplot(nat, aes(wl))+
-  geom_line(aes(y = Manus2, linetype = "Natural"), color = "#ffcf00", linewidth = 0.7)+
-  geom_line(aes(y = Robot_manus2, linetype = "Paint"), color = "black", linewidth = 0.7)+
+p1 <- ggplot(nat2, aes(wl))+
+  geom_line(aes(y = Manus, linetype = "Natural"), color = "#ffcf00", linewidth = 0.7)+
+  geom_line(aes(y = Robot_manus, linetype = "Paint"), color = "black", linewidth = 0.7)+
   ylim(0, 100)+
-  labs(title = expression(bold("Manus")),
+  labs(title = expression(bold("Orange manus")),
        x = "Wavelength (nm)",
        y = "Reflectance (%)")+
   theme_test(base_size = 8)+
@@ -52,11 +49,11 @@ p1 <- ggplot(nat, aes(wl))+
 p1
 
 #Dactylus ----
-p2 <- ggplot(nat, aes(wl))+
-  geom_line(aes(y = Dactylus2, linetype = "Natural"), color = "pink", linewidth = 0.7)+
-  geom_line(aes(y = Robot_dactyl2, linetype = "Paint"), color = "black", linewidth = 0.7)+
+p2 <- ggplot(nat2, aes(wl))+
+  geom_line(aes(y = Dactylus, linetype = "Natural"), color = "pink", linewidth = 0.7)+
+  geom_line(aes(y = Robot_dactyl, linetype = "Paint"), color = "black", linewidth = 0.7)+
   ylim(0, 100)+
-  labs(title = expression(bold("Dactylus")),
+  labs(title = expression(bold("Pink dactylus")),
        x = "Wavelength (nm)",
        y = "Reflectance (%)")+
   theme_test(base_size = 8)+
@@ -69,11 +66,11 @@ p2 <- ggplot(nat, aes(wl))+
 p2
 
 #Carapace ----
-p3 <- ggplot(nat, aes(wl))+
-  geom_line(aes(y = Carapace2, linetype = "Natural"), color = "grey", linewidth = 0.7)+
-  geom_line(aes(y = Robot_carapace1, linetype = "Paint"), color = "black", linewidth = 0.7)+
+p3 <- ggplot(nat2, aes(wl))+
+  geom_line(aes(y = Carapace, linetype = "Natural"), color = "grey", linewidth = 0.7)+
+  geom_line(aes(y = Black_carapace, linetype = "Paint"), color = "black", linewidth = 0.7)+
   ylim(0, 100)+
-  labs(title = expression(bold("Carapace")),
+  labs(title = expression(bold("Black carapace")),
        x = "Wavelength (nm)",
        y = "Reflectance (%)")+
   theme_test(base_size = 8)+
@@ -85,15 +82,15 @@ p3 <- ggplot(nat, aes(wl))+
   guides(linetype = guide_legend(title = NULL))
 p3
 
-p4 <- ggplot(nat, aes(wl))+
-  geom_line(aes(y = Mudflat2, linetype = "Mudflat"), color = "brown", linewidth = 0.7)+
-  geom_line(aes(y = Cloth1, linetype = "Cloth"), color = "black", linewidth = 0.7)+
+p4 <- ggplot(nat2, aes(wl))+
+  geom_line(aes(y = Blue_spot, linetype = "Natural"), color = "lightblue", linewidth = 0.7)+
+  geom_line(aes(y = Blue_carapace, linetype = "Paint"), color = "black", linewidth = 0.7)+
   ylim(0, 100)+
-  labs(title = expression(bold("Carapace")),
+  labs(title = expression(bold("Blue carapace")),
        x = "Wavelength (nm)",
        y = "Reflectance (%)")+
   theme_test(base_size = 8)+
-  scale_linetype_manual(values = c("Cloth" = "dashed", "Mudflat" = "solid")) +
+  scale_linetype_manual(values = c("Paint" = "dashed", "Natural" = "solid")) +
   theme(legend.key.height= unit(0.3, 'cm'),
         legend.key.width= unit(1, 'cm'),
         legend.position = c(0.70, 0.8),
@@ -101,9 +98,25 @@ p4 <- ggplot(nat, aes(wl))+
   guides(linetype = guide_legend(title = NULL))
 p4
 
+p5 <- ggplot(nat2, aes(wl))+
+  geom_line(aes(y = Mudflat, linetype = "Mudflat"), color = "brown", linewidth = 0.7)+
+  geom_line(aes(y = Cloth, linetype = "Cloth"), color = "black", linewidth = 0.7)+
+  ylim(0, 100)+
+  labs(title = expression(bold("Background")),
+       x = "Wavelength (nm)",
+       y = "Reflectance (%)")+
+  theme_test(base_size = 8)+
+  scale_linetype_manual(values = c("Mudflat" = "solid","Cloth" = "dashed")) +
+  theme(legend.key.height= unit(0.3, 'cm'),
+        legend.key.width= unit(1, 'cm'),
+        legend.position = c(0.70, 0.8),
+        plot.title = element_text(size = 8))+
+  guides(linetype = guide_legend(title = NULL))
+p5
+
 #Unite plots ----
-p <- plot_grid(p1,p2,p3,p4,
-          ncol = 2,
+p <- plot_grid(p1,p2,p3,p4,p5,
+          ncol = 3,
           align = "vh",
           labels = "AUTO")
 p
@@ -112,7 +125,7 @@ p
 
 ggsave(plot = p, 
        filename = "outputs/figures/apparatus_colors.png",
-       width = 4, 
+       width = 6, 
        height = 4, 
        dpi = 300)
 

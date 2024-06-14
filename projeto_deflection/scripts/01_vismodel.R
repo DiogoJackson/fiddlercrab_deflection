@@ -10,12 +10,12 @@ library(pavo)
 library(colorspec)
 
 #Import data ----
-reflet <- read.csv("data/raw/refletancias/00_refletancias.csv")
+reflet <- read.csv("data/raw/refletancias/00_natural_reflectances.csv")
 reflet <- fixspec(reflet)
 colnames(reflet)
 
 #Vismodel ----
 #Comparando as tintas com a refletancia natural ----
-vis <- vis.peafowl(reflet, background = "gv_q_Reflection_00002", illum = "D65")
+vis <- vis.peafowl(reflet, background = "cloth", illum = "bluesky")
 vis
 

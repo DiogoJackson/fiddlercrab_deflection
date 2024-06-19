@@ -11,16 +11,16 @@
 "10","5","Claw",1,"front","front","bush_turkey","adult","A","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.475384,152.978318","definitive","no",2024-04-08
 "11","6","Claw",1,"lateral","lateral","bush_turkey","adult","A","south_banks","shade","mud_cloth","-27.471061095217745, 153.0127999012344","definitive","no",2024-04-15
 "12","7","Claw",1,"front","front","bush_turkey","adult","A","south_banks","shade","mud_cloth","-27.475797,153.021809","definitive","no",2024-04-15
-"13","8","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465852,153.034098","definitive","yes",2024-04-15
-"14","8","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465852,153.034098","definitive","yes",2024-04-15
-"15","9","Claw",1,"lateral","lateral","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465621,153.034201","definitive",NA,2024-04-16
-"16","9","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465621,153.034201","definitive",NA,2024-04-16
+"13","8","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park_south","shade","mud_cloth","-27.465852,153.034098","definitive","yes",2024-04-15
+"14","8","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park_south","shade","mud_cloth","-27.465852,153.034098","definitive","yes",2024-04-15
+"15","9","Claw",1,"lateral","lateral","bush_turkey","adult","A","captain_burke_park_south","shade","mud_cloth","-27.465621,153.034201","definitive",NA,2024-04-16
+"16","9","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park_south","shade","mud_cloth","-27.465621,153.034201","definitive",NA,2024-04-16
 "17","10","Claw",1,"back","back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.464701,153.035694","definitive",NA,2024-04-16
 "18","11","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.464701,153.035694","definitive",NA,2024-04-16
 "19","12","Carapace",0,"back","back","bush_turkey","adult","A","captain_burke_park","direct_sunlight","mud_cloth","-27.464841,153.035266","definitive",NA,2024-04-16
 "20","12","Claw",1,"lateral","lateral","bush_turkey","adult","A","captain_burke_park","direct_sunlight","mud_cloth","-27.464841,153.035266","definitive",NA,2024-04-16
 "21","12","Claw",1,"front","front","bush_turkey","adult","A","captain_burke_park","direct_sunlight","mud_cloth","-27.464841,153.035266","definitive",NA,2024-04-16
-"22","13","Claw",1,"lateral","lateral","bush_turkey","adult","A","captain_burke_park","shade","mud_cloth","-27.465852,153.034098","definitive",NA,2024-04-16
+"22","13","Claw",1,"lateral","lateral","bush_turkey","adult","A","captain_burke_park_south","shade","mud_cloth","-27.465852,153.034098","definitive",NA,2024-04-16
 "23","14","Carapace",0,"lateral","lateral","bush_turkey","adult","A","simpsons_playground_reserve","shade","mud_cloth","-27.523223,152.992964","definitive",NA,2024-04-18
 "24","15","Carapace",0,"back","back","bush_turkey","adult","A","simpsons_playground_reserve","direct_sunlight","mud_cloth","-27.523649,152.993419","definitive",NA,2024-04-18
 "25","15","Carapace",0,"back","back","bush_turkey","adult","A","simpsons_playground_reserve","direct_sunlight","mud_cloth","-27.523649,152.993419","definitive",NA,2024-04-18
@@ -91,3 +91,6 @@
 "90","45","Claw",1,"back","front","bush_turkey","adult","C","simpsons_playground_reserve","shade","mud_cloth","-27.523727,152.993198","definitive",NA,2024-06-03
 "91","45","Carapace",0,"front","front","bush_turkey","adult","C","simpsons_playground_reserve","shade","mud_cloth","-27.523727,152.993198","definitive",NA,2024-06-03
 "92","46","Carapace",0,"back","back","bush_turkey","adult","A","simpsons_playground_reserve","direct_sunlight","mud_cloth","-27.523759,152.991854","definitive",NA,2024-06-03
+"93","47","Carapace",0,"front","front","bush_turkey","adult","D","captain_burke_park","shade","mud_cloth","-27.464707,153.035232","definitive",NA,2024-06-15
+"94","47","Carapace",0,"lateral","right","bush_turkey","adult","D","captain_burke_park","shade","mud_cloth","-27.464707,153.035232","definitive",NA,2024-06-15
+"95","48","Carapace",0,"back","back","bush_turkey","adult","D","botanic_gardens_mt_coot_tha","shade","mud_cloth","-27.476608,152.980305","definitive",NA,2024-06-16

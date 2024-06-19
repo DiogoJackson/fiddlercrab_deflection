@@ -16,18 +16,15 @@ head(data)
 glimpse(data)
 
 #Fitting models ----
-m1 <- glmer(outcome ~ treatment * attack_position + (1 | place), 
-                    data = data, family = binomial)
-summary(m1)
 
-m2 <- glmer(outcome ~ treatment + attack_position + (1 | place), 
-            data = data, family = binomial)
-summary(m2)
-
-m3 <- glmer(outcome ~ treatment * attack_position + (1 | trial) + (1 | place), 
-            data = data, family = binomial)
-summary(m3)
-
+#There is no differenc in atk position so take it off ----
 m4 <- glmer(outcome ~ treatment + attack_position + (1 | trial) + (1 | place), 
             data = data, family = binomial)
 summary(m4)
+
+#Fitting model without attack position variable ----
+#This is my result.
+#No paper dizer que a posicao do atk nao influencia entao foi tirado do modelo.
+m5 <- glmer(outcome ~ treatment + (1 | trial) + (1 | place), 
+            data = data, family = binomial)
+summary(m5)

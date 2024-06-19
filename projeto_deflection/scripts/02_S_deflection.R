@@ -47,6 +47,15 @@ p2 <- ggplot(dat, aes(x = first_attack, fill = color)) +
   facet_grid(~treatment)
 p2
 
+p2 <- ggplot(dat, aes(x = first_attack, fill = place)) +
+  geom_bar(width = 0.5) +
+  scale_x_discrete(limits = c("Claw", "Carapace")) + # Define a ordem das barras
+  labs(x = "", y = "Total of attacks") +
+  ylim(0, 30) +
+  theme_classic(base_size = 16) +
+  facet_grid(treatment~place)
+p2
+
 ggsave(plot = p1, 
        filename = "outputs/figures/Figure_atk_position.png",
        width = 8, 

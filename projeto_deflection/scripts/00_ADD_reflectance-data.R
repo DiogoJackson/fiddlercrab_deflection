@@ -10,37 +10,27 @@ library(pavo)
 library(colorspec)
 
 #Import procspec data ----
-refletancias <- getspec("data/raw/refletancias/comparation",                 
-                                ext=c("procspec","txt"), 
-                                decimal=",", 
-                                lim=c(300,700))
-
-refletancias2 <- getspec("data/raw/refletancias/naturals",                 
+color_comparation <- getspec("data/raw/refletancias/color_comparation",                 
                         ext=c("procspec","txt"), 
                         decimal=",", 
                         lim=c(300,700))
 
-refletancias3 <- getspec("data/raw/refletancias/substrato",                 
-                        ext=c("procspec","txt"), 
-                        decimal=",", 
-                        lim=c(300,700))
+vomeris_colors <- getspec("data/raw/refletancias/vomeris_colors",                 
+                             ext=c("procspec","txt"), 
+                             decimal=",", 
+                             lim=c(300,700))
 
 #Save reflectances ----
-write.csv(refletancias,
-          "data/raw/refletancias/00_refletancias.csv", 
+write.csv(color_comparation,
+          "data/raw/refletancias/00_color_comparation.csv", 
           row.names = FALSE)
 
-write.csv(refletancias2,
-          "data/raw/refletancias/00_natural_reflectances.csv", 
-          row.names = FALSE)
-
-write.csv(refletancias3,
-          "data/raw/refletancias/00_bkg_reflectances.csv", 
+write.csv(vomeris_colors,
+          "data/raw/refletancias/00_vomeris_colors.csv", 
           row.names = FALSE)
 
 #test saved data ----
-reflet_test  <- read.csv("data/raw/refletancias/00_refletancias.csv")
-reflet_test2 <- read.csv("data/raw/refletancias/00_natural_reflectances.csv")
-reflet_test3 <- read.csv("data/raw/refletancias/00_bkg_reflectances.csv")
+reflet_test   <- read.csv("data/raw/refletancias/00_color_comparation.csv")
+reflet_test2  <- read.csv("data/raw/refletancias/00_vomeris_colors.csv")
 
 # FIM ----

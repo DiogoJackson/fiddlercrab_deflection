@@ -12,12 +12,42 @@ library(colorspec)
 library(cowplot)
 
 #Import procspec data tintas ----
-nat <- read.csv("data/raw/refletancias/00_natural_reflectances.csv")
-nat <- fixspec(nat)
+reflet <- read.csv("data/raw/refletancias/00_vomeris_colors.csv")
+reflet <- fixspec(reflet)
 
-#Comparing claw colors with paints ----
+reflet2 <- read.csv("data/raw/refletancias/00_color_comparation.csv")
+reflet2 <- fixspec(reflet2)
 
-nat2 <- nat %>%
+
+
+#G. vomeris colors ----
+p0 <- ggplot(reflet, aes(x = wl)) +
+  geom_line(aes(y = orange_manus, color = "Orange Manus"), linewidth = 0.7) +
+  geom_line(aes(y = black_carapace, color = "Black Carapace"), linewidth = 0.7) +
+  geom_line(aes(y = blue_carapace, color = "Blue Carapace"), linewidth = 0.7) +
+  geom_line(aes(y = mudflat, color = "Mudflat"), linewidth = 0.7) +
+  geom_line(aes(y = pink_dactylus, color = "Pink Dactylus"), linewidth = 0.7) +
+  ylim(0, 100) +
+  labs(title = expression(italic("Gelasimus vomeris")),
+       x = "Wavelength (nm)",
+       y = "Reflectance (%)") +
+  scale_color_manual(values = c("Orange Manus" = "#ffcf00",
+                                "Black Carapace" = "black",
+                                "Blue Carapace" = "lightblue",
+                                "Mudflat" = "brown",
+                                "Pink Dactylus" = "pink")) +
+  theme_test(base_size = 8) +
+  theme(legend.key.height = unit(0.3, 'cm'),
+        legend.key.width = unit(1, 'cm'),
+        legend.position = c(0.70, 0.8),
+        plot.title = element_text(size = 8)) +
+  guides(color = guide_legend(title = NULL))
+p0
+
+
+#Comparing G. vomeris colors with paints ----
+
+reflet2 <- reflet2 %>%
   rename("Carapace" = contains("black_carapace")) %>% 
   rename("Blue_spot" = contains("blue_carapace")) %>% 
   rename("Dactylus" = contains("pink_dactylus")) %>% 
@@ -28,11 +58,11 @@ nat2 <- nat %>%
   rename("Cloth" = contains("cloth")) %>% 
   rename("Black_carapace" = contains("black_paint")) %>% 
   rename("Blue_carapace" = contains("blue_paint"))
-nat2
+reflet2
 
 #2.1. Colors comparation (Natural vs paint) ----
 
-p1 <- ggplot(nat2, aes(wl))+
+p1 <- ggplot(reflet2, aes(wl))+
   geom_line(aes(y = Manus, linetype = "Natural"), color = "#ffcf00", linewidth = 0.7)+
   geom_line(aes(y = Robot_manus, linetype = "Paint"), color = "black", linewidth = 0.7)+
   ylim(0, 100)+
@@ -123,8 +153,14 @@ p
 
 #Save plot ----
 
+ggsave(plot = p0, 
+       filename = "outputs/figures/vomeris_colors.png",
+       width = 6, 
+       height = 4, 
+       dpi = 300)
+
 ggsave(plot = p, 
-       filename = "outputs/figures/apparatus_colors.png",
+       filename = "outputs/figures/color_comparations.png",
        width = 6, 
        height = 4, 
        dpi = 300)

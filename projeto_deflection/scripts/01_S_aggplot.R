@@ -155,8 +155,8 @@ p
 
 ggsave(plot = p0, 
        filename = "outputs/figures/vomeris_colors.png",
-       width = 6, 
-       height = 4, 
+       width = 3, 
+       height = 2.5, 
        dpi = 300)
 
 ggsave(plot = p, 

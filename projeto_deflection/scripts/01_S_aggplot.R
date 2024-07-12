@@ -79,7 +79,7 @@ p1 <- ggplot(reflet2, aes(wl))+
 p1
 
 #Dactylus ----
-p2 <- ggplot(nat2, aes(wl))+
+p2 <- ggplot(reflet2, aes(wl))+
   geom_line(aes(y = Dactylus, linetype = "Natural"), color = "pink", linewidth = 0.7)+
   geom_line(aes(y = Robot_dactyl, linetype = "Paint"), color = "black", linewidth = 0.7)+
   ylim(0, 100)+
@@ -96,7 +96,7 @@ p2 <- ggplot(nat2, aes(wl))+
 p2
 
 #Carapace ----
-p3 <- ggplot(nat2, aes(wl))+
+p3 <- ggplot(reflet2, aes(wl))+
   geom_line(aes(y = Carapace, linetype = "Natural"), color = "grey", linewidth = 0.7)+
   geom_line(aes(y = Black_carapace, linetype = "Paint"), color = "black", linewidth = 0.7)+
   ylim(0, 100)+
@@ -112,7 +112,7 @@ p3 <- ggplot(nat2, aes(wl))+
   guides(linetype = guide_legend(title = NULL))
 p3
 
-p4 <- ggplot(nat2, aes(wl))+
+p4 <- ggplot(reflet2, aes(wl))+
   geom_line(aes(y = Blue_spot, linetype = "Natural"), color = "lightblue", linewidth = 0.7)+
   geom_line(aes(y = Blue_carapace, linetype = "Paint"), color = "black", linewidth = 0.7)+
   ylim(0, 100)+
@@ -128,7 +128,7 @@ p4 <- ggplot(nat2, aes(wl))+
   guides(linetype = guide_legend(title = NULL))
 p4
 
-p5 <- ggplot(nat2, aes(wl))+
+p5 <- ggplot(reflet2, aes(wl))+
   geom_line(aes(y = Mudflat, linetype = "Mudflat"), color = "brown", linewidth = 0.7)+
   geom_line(aes(y = Cloth, linetype = "Cloth"), color = "black", linewidth = 0.7)+
   ylim(0, 100)+
@@ -147,7 +147,7 @@ p5
 #Unite plots ----
 p <- plot_grid(p1,p2,p3,p4,p5,
           ncol = 3,
-          align = "vh",
+          align = "h",
           labels = "AUTO")
 p
 

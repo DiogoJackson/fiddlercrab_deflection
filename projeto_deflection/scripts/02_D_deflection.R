@@ -3,7 +3,7 @@
 # Wed May 22 22:01:39 2024 ------------------------------
 
 #last update
-# Mon May 27 11:07:49 2024 ------------------------------
+# Wed Aug  7 20:21:40 2024 ------------------------------
 
 #package ----
 library(readxl)
@@ -17,14 +17,15 @@ glimpse(data)
 
 #Fitting models ----
 
-#There is no differenc in atk position so take it off ----
-m4 <- glmer(outcome ~ treatment + attack_position + (1 | trial) + (1 | place), 
+#There is no significance in atk position and illuminant ----
+m1 <- glmer(outcome ~ treatment + attack_position + illuminant + (1 | trial) + (1 | place), 
             data = data, family = binomial)
-summary(m4)
+summary(m1)
 
-#Fitting model without attack position variable ----
-#This is my result.
-#No paper dizer que a posicao do atk nao influencia entao foi tirado do modelo.
-m5 <- glmer(outcome ~ treatment + (1 | trial) + (1 | place), 
+#Fitting model without attack position and illuminant variables ----
+#Final result ----
+m2 <- glmer(outcome ~ treatment + (1 | trial) + (1 | place), 
             data = data, family = binomial)
-summary(m5)
+summary(m2)
+
+# The end ---------------------------------------------------------------------

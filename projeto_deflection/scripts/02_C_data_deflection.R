@@ -3,7 +3,7 @@
 # Wed May 22 22:01:39 2024 ------------------------------
 
 #last update
-# Wed May 22 22:01:44 2024 ------------------------------
+# Wed Aug  7 20:22:04 2024 ------------------------------
 
 #package ----
 library(readxl)
@@ -13,12 +13,32 @@ library(lme4)
 #Import data ----
 data <- read_excel("data/raw/data_deflection.xlsx")
 
-#creating first_attack 0 or 1
+#Cleaning data ----
 data <- data %>% 
-  mutate(outcome = ifelse(first_attack == "Claw", 1, 0)) %>% 
-  relocate(ID, trial, first_attack, outcome)
+  mutate(outcome = ifelse(first_attack == "Claw", 1, 0)) %>%           #creating first_attack 0 or 1
+  mutate(treatment = fct_recode(treatment, "B" = "C", "C" = "B")) %>%  #rename treatments
+  filter(treatment != "D") %>%                                         #we are not using the treatment D (orange claw and black carapace without movement)
+  filter(species == "bush_turkey") %>%                                 #using only bush-turkeys
+  filter(experiment == "definitive") %>%                               #not including the pilot data
+  relocate(ID, trial, first_attack, outcome)                           #relocate variables in dataset
 head(data)
 
+# Modificar o dataframe para incluir uma coluna de cor baseada no tratamento e first_attack
+data$color <- with(data, ifelse(treatment == "A" & first_attack == "Carapace", "#2f4858",
+                              ifelse(treatment == "A" & first_attack == "Claw", "#f6ae2d",
+                                     ifelse(treatment == "C" & first_attack == "Carapace", "#2f4858",
+                                            ifelse(treatment == "C" & first_attack == "Claw", "#2f4858",
+                                                   ifelse(treatment == "B" & first_attack == "Carapace", "#56dde0",
+                                                          ifelse(treatment == "B" & first_attack == "Claw", "#f6ae2d",
+                                                                 ifelse(treatment == "D" & first_attack == "Carapace", "#2f4858", NA))))))))
+
+data$attack_label <- with(data,
+                         ifelse(treatment == "A" & first_attack == "Claw", "Orange claw",
+                                ifelse(treatment == "A" & first_attack == "Carapace", "Black carapace",
+                                       ifelse(treatment == "C" & first_attack == "Claw", "Black claw",
+                                              ifelse(treatment == "C" & first_attack == "Carapace", "Black carapace",
+                                                     ifelse(treatment == "B" & first_attack == "Claw", "Orange claw",
+                                                            ifelse(treatment == "B" & first_attack == "Carapace", "Blue carapace", NA)))))))
 #correcting variable types
 glimpse(data)
 data$treatment <- as.factor(data$treatment)

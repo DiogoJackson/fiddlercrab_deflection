@@ -1,0 +1,108 @@
+<!--Pololu Maestro servo controller settings file, http://www.pololu.com/catalog/product/1350-->
+<UscSettings version="1">
+  <NeverSuspend>false</NeverSuspend>
+  <SerialMode>USB_DUAL_PORT</SerialMode>
+  <FixedBaudRate>9600</FixedBaudRate>
+  <SerialTimeout>0</SerialTimeout>
+  <EnableCrc>false</EnableCrc>
+  <SerialDeviceNumber>12</SerialDeviceNumber>
+  <SerialMiniSscOffset>0</SerialMiniSscOffset>
+  <Channels ServosAvailable="6" ServoPeriod="156">
+    <!--Period = 19.968 ms-->
+    <!--Channel 0-->
+    <Channel name="switch" mode="Input" min="0" max="1024" homemode="Ignore" home="0" speed="0" acceleration="0" neutral="1024" range="1905" />
+    <!--Channel 1-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 2-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 3-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 4-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="3968" range="1905" />
+    <!--Channel 5-->
+    <Channel name="Motor" mode="Servo" min="6016" max="7360" homemode="Goto" home="7360" speed="0" acceleration="0" neutral="6400" range="1905" />
+  </Channels>
+  <Sequences>
+    <Sequence name="Sequence 0">
+      <Frame name="Frame 0" duration="500">1023 0 0 0 0 7168</Frame>
+      <Frame name="Frame 1" duration="500">1023 0 0 0 0 6400</Frame>
+    </Sequence>
+  </Sequences>
+  <Script ScriptDone="false">goto main_loop
+
+# waits until all motors have stopped
+sub moving_wait
+begin get_moving_state while repeat return
+
+# returns true if the button is pressed (active-low button)
+# &lt;channel&gt; get_button
+sub get_button
+  get_position 512 less_than # chanel_position &lt; 512
+	  return
+
+# &lt;state&gt; wait_for_button_state
+# waits for the button on channel 0 to be the given state (0 or 1) for 10ms
+sub wait_for_button_state
+  # get the start-time
+  get_ms # stack: S, T0
+  begin
+    # check if the button (on channel 0) is the given state (S)
+    over # stack: S, T0, S
+    0 get_button # stack: S, T0, S, button
+    equals # stack: S, T0, S == button
+    if # stack: S, T0
+      # the button is the desired state, has it been 10ms since the start-time?
+      get_ms # stack: S, T0, T1
+      over # stack: S, T0, T1, T0
+      minus # stack: S, T0, T1-T0
+      10 greater_than # stack: S, T0, T1-T0 &gt; 10
+      if # stack: S, T0
+        #yes, it's been 10ms -- clear the stack and return
+        drop drop return
+      endif
+      #if it hasn't been 10ms, we will repeat until it is
+    else # stack: S, T0
+      #the button is not the desired state -- reset the start time
+      drop # stack: S
+      get_ms # stack: S, T0
+    endif
+  repeat
+
+# wait for the button to be pressed: that is, open for at least 10ms, followed by closed for 10ms
+sub wait_for_button_press
+  0 wait_for_button_state
+  led_on
+  1 wait_for_button_state
+  led_off
+  return
+
+main_loop:
+begin	
+#delay for 1000 ms
+  1000 delay
+  wait_for_button_press
+  #repeat 10 times:
+  100 begin dup while
+    #subtract 1 from the loop variable
+    1 minus
+    #go up
+    30 5 speed
+    7380 5 servo
+    #wait until motion complete
+    moving_wait
+    #go down
+    20 5 speed
+    6000 5 servo
+    #wait until motion complete
+    moving_wait
+    #wait for 1 second
+    1000 delay
+    
+    #stop if the button is pressed    
+    0 get_button if drop 0 endif
+  repeat
+  drop # drop the loop variable
+repeat
+
+</Script>
+</UscSettings>

@@ -19,6 +19,3 @@ colnames(reflet)
 vis <- vis.peafowl(reflet, background = "cloth", illum = "bluesky")
 vis
 
-#Comparando cores naturais com o background ----
-vis2 <- vis.peafowl(reflet, background = "mudflat", illum = "D65")
-vis2

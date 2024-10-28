@@ -15,26 +15,6 @@ dat <- read.csv("data/processed/data_deflection_processed.csv")
 
 #Visualizing data  ----
 
-#By attack position ----
-p1 <- ggplot(dat, aes(x = first_attack, fill = attack_position)) +
-  geom_bar(width = 0.6, position = position_dodge(preserve = "single" )) +  # Defina a cor de preenchimento aqui
-  geom_text(stat = "count", aes(label = ..count..), position = position_dodge(width = 0.6), vjust = -0.5, size = 3) +  
-  scale_fill_manual(values = c("grey", "grey33", "grey10"))+
-  labs(x = "First attack", y = "Total of attacks") +
-  theme_classic()+
-  facet_grid(~treatment)
-p1
-
-#By illuminant ----
-p2 <- ggplot(dat, aes(x = first_attack, fill = illuminant)) +
-  geom_bar(width = 0.6, position = position_dodge(preserve = "single" )) +  # Defina a cor de preenchimento aqui
-  geom_text(stat = "count", aes(label = ..count..), position = position_dodge(width = 0.6), vjust = -0.5, size = 3) +  
-  scale_fill_manual(values = c("grey", "grey33", "grey10"))+
-  labs(x = "First attack", y = "Total of attacks") +
-  theme_classic()+
-  facet_grid(~treatment)
-p2
-
 #Reorganizando os fatores ----
 dat$attack_label <- factor(dat$attack_label, 
                            levels = c("Orange claw", 

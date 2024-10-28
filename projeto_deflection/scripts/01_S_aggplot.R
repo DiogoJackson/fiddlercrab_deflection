@@ -4,7 +4,6 @@
 # last update:
 # Mon Feb  5 16:33:02 2024 ------------------------------
 
-
 #Packages ----
 library(tidyverse)
 library(pavo)
@@ -17,8 +16,6 @@ reflet <- fixspec(reflet)
 
 reflet2 <- read.csv("data/raw/refletancias/00_color_comparation.csv")
 reflet2 <- fixspec(reflet2)
-
-
 
 #G. vomeris colors ----
 p0 <- ggplot(reflet, aes(x = wl)) +
@@ -43,7 +40,6 @@ p0 <- ggplot(reflet, aes(x = wl)) +
         plot.title = element_text(size = 8)) +
   guides(color = guide_legend(title = NULL))
 p0
-
 
 #Comparing G. vomeris colors with paints ----
 

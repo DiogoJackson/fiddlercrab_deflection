@@ -34,24 +34,13 @@ p3 <- ggplot(dat, aes(x = attack_label, fill = color)) +
   geom_bar(width = 0.5) +
   stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +
   scale_fill_identity() +
-  labs(x = "", y = "Total of attacks") +
+  labs(x = "", y = "Number of first attacks") +
   ylim(0, 30) +
   theme_classic(base_size = 17) +
   facet_grid(~treatment, scales = "free", space = "free")
 p3
 
 #Saving graphs ----
-ggsave(plot = p1, 
-       filename = "outputs/figures/Figure_atk_position.png",
-       width = 8, 
-       height = 5, 
-       dpi = 300)
-
-ggsave(plot = p2, 
-       filename = "outputs/figures/Figure_illuminant.png",
-       width = 10, 
-       height = 5, 
-       dpi = 300)
 
 ggsave(plot = p3, 
        filename = "outputs/figures/Figure_3.png",

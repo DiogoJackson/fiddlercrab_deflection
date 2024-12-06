@@ -1,4 +1,4 @@
-# Code for the deflection manuscript
+# Code for the manuscript "Fiddler crab claws work as a deflection antipredator defence"
 
 ## Content of the repository
 

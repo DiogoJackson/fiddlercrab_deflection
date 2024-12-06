@@ -1,19 +1,21 @@
-#'Data deflection ----
+#'Script to Clean Raw Data and Save as CSV ----
 #'Author: Diogo Silva
-# Wed May 22 22:01:39 2024 ------------------------------
+# Wed May 22 22:01:39 2024 
 
 #last update
-# Wed Aug  7 20:22:04 2024 ------------------------------
+# Thu Dec  5 23:12:15 2024
+
 
 #package ----
 library(readxl)
 library(tidyverse)
 library(lme4)
 
-#Import data ----
+#1. Import data ----
 data <- read_excel("data/raw/data_deflection.xlsx")
 
-#Cleaning data ----
+#2. Cleaning data ----
+
 data <- data %>% 
   mutate(outcome = ifelse(first_attack == "Claw", 1, 0)) %>%           #creating first_attack 0 or 1
   mutate(treatment = fct_recode(treatment, "B" = "C", "C" = "B")) %>%  #rename treatments
@@ -23,7 +25,8 @@ data <- data %>%
   relocate(ID, trial, first_attack, outcome)                           #relocate variables in dataset
 head(data)
 
-# Modificar o dataframe para incluir uma coluna de cor baseada no tratamento e first_attack
+#2.1 Modify the dataframe to include a color column based on treatment and first_attack ----
+#This is so that, in the graph, the bars representing body parts are colored according to the treatment color.
 data$color <- with(data, ifelse(treatment == "A" & first_attack == "Carapace", "#2f4858",
                               ifelse(treatment == "A" & first_attack == "Claw", "#f6ae2d",
                                      ifelse(treatment == "C" & first_attack == "Carapace", "#2f4858",
@@ -39,7 +42,7 @@ data$attack_label <- with(data,
                                               ifelse(treatment == "C" & first_attack == "Carapace", "Black carapace",
                                                      ifelse(treatment == "B" & first_attack == "Claw", "Orange claw",
                                                             ifelse(treatment == "B" & first_attack == "Carapace", "Blue carapace", NA)))))))
-#correcting variable types
+#3. Correcting variable types ----
 glimpse(data)
 data$treatment <- as.factor(data$treatment)
 data$attack_position <- as.factor(data$attack_position)
@@ -51,12 +54,12 @@ data$species <- as.factor(data$species)
 data$background <- as.factor(data$background)
 glimpse(data)
 
-#Save clean data ----
+#4. Save clean data ----
 write.csv(data,
           "data/processed/data_deflection_processed.csv",
           row.names = F)
 
-#Test data
+#Test clean data ----
 teste_data <- read.csv("data/processed/data_deflection_processed.csv")
 head(teste_data)
 

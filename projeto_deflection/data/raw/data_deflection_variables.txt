@@ -26,7 +26,7 @@ Treatment D = orange claw, black carapace, but without claws moviment.
 Location of the experiment.
 
 >>> background:
-Robocrab's background. Example: beige cloth, mud-stained cloth...
+Robocrab's background. Example: beige_cloth, mud_cloth.
 
 >>> illuminant:
 If the robocrab position was under direct sunlight or shade.

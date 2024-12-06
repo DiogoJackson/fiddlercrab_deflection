@@ -1,23 +1,26 @@
-# Script para criar graficos
-# author: Diogo Silva
-# Mon Feb  5 16:32:59 2024 ------------------------------
+# Script to Create Figure 2 - Comparison of Reflectance
+# Author: Diogo Silva
+# Mon Feb  5 16:32:59 2024
 # last update:
-# Mon Feb  5 16:33:02 2024 ------------------------------
+# Thu Dec  5 22:55:04 2024 
 
 #Packages ----
 library(tidyverse)
 library(pavo)
-library(colorspec)
+library(colorspec) 
 library(cowplot)
 
-#Import procspec data tintas ----
-reflet <- read.csv("data/raw/refletancias/00_vomeris_colors.csv")
+#Note: to install the colorspec package use the code below:
+#remotes::install_github("Diogojackson/colorspec/colorspec")
+
+#1. Import of Reflectance Spreadsheet ----
+reflet <- read.csv("data/raw/reflectance/00_vomeris_colors.csv")
 reflet <- fixspec(reflet)
 
-reflet2 <- read.csv("data/raw/refletancias/00_color_comparation.csv")
+reflet2 <- read.csv("data/raw/reflectance/00_color_comparation.csv")
 reflet2 <- fixspec(reflet2)
 
-#G. vomeris colors ----
+#2. Graph of G. vomeris colors ----
 p0 <- ggplot(reflet, aes(x = wl)) +
   geom_line(aes(y = orange_manus, color = "Orange Manus"), linewidth = 0.7) +
   geom_line(aes(y = black_carapace, color = "Black Carapace"), linewidth = 0.7) +
@@ -41,8 +44,7 @@ p0 <- ggplot(reflet, aes(x = wl)) +
   guides(color = guide_legend(title = NULL))
 p0
 
-#Comparing G. vomeris colors with paints ----
-
+#3. Rename ----
 reflet2 <- reflet2 %>%
   rename("Carapace" = contains("black_carapace")) %>% 
   rename("Blue_spot" = contains("blue_carapace")) %>% 
@@ -56,8 +58,9 @@ reflet2 <- reflet2 %>%
   rename("Blue_carapace" = contains("blue_paint"))
 reflet2
 
-#2.1. Colors comparation (Natural vs paint) ----
+#4. Colors comparation (Natural vs paint) ----
 
+#4.1 Claw - manus ----
 p1 <- ggplot(reflet2, aes(wl))+
   geom_line(aes(y = Manus, linetype = "Natural"), color = "#ffcf00", linewidth = 0.7)+
   geom_line(aes(y = Robot_manus, linetype = "Paint"), color = "black", linewidth = 0.7)+
@@ -74,7 +77,7 @@ p1 <- ggplot(reflet2, aes(wl))+
   guides(linetype = guide_legend(title = NULL))
 p1
 
-#Dactylus ----
+#4.2 Claw - Dactylus ----
 p2 <- ggplot(reflet2, aes(wl))+
   geom_line(aes(y = Dactylus, linetype = "Natural"), color = "pink", linewidth = 0.7)+
   geom_line(aes(y = Robot_dactyl, linetype = "Paint"), color = "black", linewidth = 0.7)+
@@ -91,7 +94,7 @@ p2 <- ggplot(reflet2, aes(wl))+
   guides(linetype = guide_legend(title = NULL))
 p2
 
-#Carapace ----
+#4.3 Black carapace ----
 p3 <- ggplot(reflet2, aes(wl))+
   geom_line(aes(y = Carapace, linetype = "Natural"), color = "grey", linewidth = 0.7)+
   geom_line(aes(y = Black_carapace, linetype = "Paint"), color = "black", linewidth = 0.7)+
@@ -108,6 +111,7 @@ p3 <- ggplot(reflet2, aes(wl))+
   guides(linetype = guide_legend(title = NULL))
 p3
 
+#4.4 Blue carapace
 p4 <- ggplot(reflet2, aes(wl))+
   geom_line(aes(y = Blue_spot, linetype = "Natural"), color = "lightblue", linewidth = 0.7)+
   geom_line(aes(y = Blue_carapace, linetype = "Paint"), color = "black", linewidth = 0.7)+
@@ -124,6 +128,7 @@ p4 <- ggplot(reflet2, aes(wl))+
   guides(linetype = guide_legend(title = NULL))
 p4
 
+#4.5 Background
 p5 <- ggplot(reflet2, aes(wl))+
   geom_line(aes(y = Mudflat, linetype = "Mudflat"), color = "brown", linewidth = 0.7)+
   geom_line(aes(y = Cloth, linetype = "Cloth"), color = "black", linewidth = 0.7)+
@@ -140,15 +145,14 @@ p5 <- ggplot(reflet2, aes(wl))+
   guides(linetype = guide_legend(title = NULL))
 p5
 
-#Unite plots ----
+#5. Unite plots ----
 p <- plot_grid(p1,p2,p3,p4,p5,
           ncol = 3,
           align = "h",
           labels = "AUTO")
 p
 
-#Save plot ----
-
+#6. Save plot ----
 ggsave(plot = p0, 
        filename = "outputs/figures/vomeris_colors.png",
        width = 3, 
@@ -161,4 +165,4 @@ ggsave(plot = p,
        height = 4, 
        dpi = 300)
 
-# FIM ----
+# The end ----

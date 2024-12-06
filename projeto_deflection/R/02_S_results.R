@@ -1,21 +1,21 @@
-#'Data deflection ----
+#'Script to Create the Result Graph - Figure 3 ----
 #'Author: Diogo Silva
-# Tue Apr 16 17:13:11 2024 ------------------------------
+# Tue Apr 16 17:13:11 2024 
 
 #last update
-# Wed May 22 22:01:54 2024 ------------------------------
+# Thu Dec  5 23:19:29 2024
 
 #package ----
 library(readxl)
 library(tidyverse)
 library(forcats)
 
-#Import data ----
+#1. Import clean data ----
 dat <- read.csv("data/processed/data_deflection_processed.csv")
 
-#Visualizing data  ----
+#2. Visualizing data  ----
 
-#Reorganizando os fatores ----
+#2.1 Reorganizing Factors ----
 dat$attack_label <- factor(dat$attack_label, 
                            levels = c("Orange claw", 
                                       "Black claw", 
@@ -29,7 +29,7 @@ dat$treatment <- factor(dat$treatment,
                                    "C")
 )
 
-#Final graphic ----
+#2.2 Final graph ----
 p3 <- ggplot(dat, aes(x = attack_label, fill = color)) +
   geom_bar(width = 0.5) +
   stat_count(aes(label = ..count..), geom = "text", vjust = -0.5) +
@@ -40,11 +40,11 @@ p3 <- ggplot(dat, aes(x = attack_label, fill = color)) +
   facet_grid(~treatment, scales = "free", space = "free")
 p3
 
-#Saving graphs ----
-
+#3. Saving graphs ----
 ggsave(plot = p3, 
        filename = "outputs/figures/Figure_3.png",
        width = 10, 
        height = 5, 
        dpi = 300)
-  
+
+#The end ----

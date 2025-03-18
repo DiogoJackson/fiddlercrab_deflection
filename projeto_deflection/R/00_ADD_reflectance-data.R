@@ -1,4 +1,4 @@
-# Script to Import Reflectance Data from Gelasimus vomeris and Its Paints
+# Script to Import Reflectance Data from Gelasimus vomeris and robotcrab paints
 # Author: Diogo J. A. Silva
 # Date: Fri Nov 24 14:30:37 2023 
 # last update:

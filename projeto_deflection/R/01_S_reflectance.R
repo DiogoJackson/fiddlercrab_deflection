@@ -1,8 +1,8 @@
-# Script to Create Figure 2 - Comparison of Reflectance
+# Script to Create Figure 2 - Comparison of Reflectances
 # Author: Diogo J. A. Silva
 # Mon Feb  5 16:32:59 2024
 # last update:
-# Thu Dec  5 22:55:04 2024 
+# Tue Mar 18 11:38:17 2025 ------------------------------
 
 #Packages ----
 library(tidyverse)

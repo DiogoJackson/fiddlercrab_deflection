@@ -14,10 +14,10 @@ library(cowplot)
 #remotes::install_github("Diogojackson/colorspec/colorspec")
 
 #1. Import of Reflectance Spreadsheet ----
-reflet <- read.csv("data/raw/reflectance/00_vomeris_colors.csv")
+reflet <- read.csv("data/processed/00_vomeris_colors.csv")
 reflet <- fixspec(reflet)
 
-reflet2 <- read.csv("data/raw/reflectance/00_color_comparation.csv")
+reflet2 <- read.csv("data/processed/00_color_comparation.csv")
 reflet2 <- fixspec(reflet2)
 
 #2. Graph of G. vomeris colors ----
@@ -153,14 +153,8 @@ p <- plot_grid(p1,p2,p3,p4,p5,
 p
 
 #6. Save plot ----
-ggsave(plot = p0, 
-       filename = "outputs/figures/vomeris_colors.png",
-       width = 3, 
-       height = 2.5, 
-       dpi = 300)
-
 ggsave(plot = p, 
-       filename = "outputs/figures/color_comparations.png",
+       filename = "outputs/figures/Figure_2_color_comparations.png",
        width = 6, 
        height = 4, 
        dpi = 300)

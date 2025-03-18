@@ -1,5 +1,5 @@
 #'Script to Clean Raw Data and Save as CSV ----
-#'Author: Diogo Silva
+#'Author: Diogo J. A. Silva
 # Wed May 22 22:01:39 2024 
 
 #last update

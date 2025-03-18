@@ -1,5 +1,5 @@
 # Script to Import Reflectance Data from Gelasimus vomeris and Its Paints
-# Author: Diogo Silva
+# Author: Diogo J. A. Silva
 # Date: Fri Nov 24 14:30:37 2023 
 # last update:
 # Thu Dec  5 22:34:42 2024 ------------------------------

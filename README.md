@@ -1,7 +1,7 @@
 # 🦀 Fiddler crab claws work as a deflection antipredator defence 🦀
-
+   
 _Diogo J. A. Silva, Samuel B. Powell, Marilia F. Erickson, Fabio Cortesi, Daniel M. A. Pessoa, Karen L. Cheney_
-    
+     
 ***
 
 **Journal**: [Biology letters](https://royalsocietypublishing.org/journal/rsbl)
@@ -69,6 +69,8 @@ Contact diogojackson@hotmail.com for any further information.
 > xxxx xxxx xxxx xxxx
 
 **Dataset DOI:**
-
-> xxxx xxxx xxxx xxxx
+   
+[![DOI](https://zenodo.org/badge/779948542.svg)](https://doi.org/10.5281/zenodo.15046834)
+   
+> Diogo J. A. Silva, Samuel B. Powell, Marilia F. Erickson, Fabio Cortesi, Daniel M. A. Pessoa, Karen L. Cheney. (2025). Data and code for: Fiddler crab claws work as a deflection antipredator defence (v1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.15046834
 ***

@@ -3,7 +3,8 @@
 _Diogo J. A. Silva, Samuel B. Powell, Marilia F. Erickson, Fabio Cortesi, Daniel M. A. Pessoa, Karen L. Cheney_
      
 ***
-
+**Status**: Submited
+   
 **Journal**: [Biology letters](https://royalsocietypublishing.org/journal/rsbl)
 
 **DOI**: [xxxxxxx](xxxx)

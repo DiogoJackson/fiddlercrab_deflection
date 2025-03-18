@@ -31,3 +31,4 @@ summary(m2)
 anova(m1, m2, test = "Chisq") #There is no diference between models
 
 # The end ---------------------------------------------------------------------
+

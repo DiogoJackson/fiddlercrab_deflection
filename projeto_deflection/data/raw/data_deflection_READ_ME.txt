@@ -20,7 +20,9 @@ Robocrab's color treatment.
 Treatment A = orange claw, black carapace.
 Treatment B = black claw, black carapace.
 Treatment C = orange claw, carapace with white and blue marks.
-Treatment D = orange claw, black carapace, but without claws moviment.
+Treatment D = orange claw, black carapace, but without claws movement 
+
+(Note: The treatment letter will be changed in the R script `02_C_raw-data`)
 
 >>> place:
 Location of the experiment.
@@ -38,9 +40,6 @@ The coordinate is obtained from a photo with location taken from the site.
 >>> experiment:
 Tells us if it's a pilot or definitive experiment.
 This variable is used to filter using R.
-
->>> video:
-This variable tells us if the event was recorded.
 
 >>> date:
 Date of the event.
